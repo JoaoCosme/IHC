@@ -237,11 +237,13 @@ class _LoginPageState extends State<LoginPage> {
                           // For example, you can navigate to another screen or perform some action.
                           print('Email: ${emailController.text}');
                           print('Password: ${passwordController.text}');
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MinhaLoja()),
-                          );
+                          if (emailController.text == "admin") {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MinhaLoja()),
+                            );
+                          }
                         },
                         child: Container(
                           decoration: BoxDecoration(
