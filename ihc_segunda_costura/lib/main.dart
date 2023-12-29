@@ -8,6 +8,8 @@ void main() {
 class FigmaToCodeApp extends StatelessWidget {
   const FigmaToCodeApp({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,6 +27,7 @@ class FigmaToCodeApp extends StatelessWidget {
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -122,22 +125,23 @@ class LoginPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'E-mail',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Open Sans',
-                                    fontWeight: FontWeight.w300,
-                                    height: 0,
-                                  ),
+                            child: const TextField(
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.w300,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: 'E-mail', // Placeholder text
+                                hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Open Sans',
+                                  fontWeight: FontWeight.w300,
                                 ),
-                              ],
+                                border: InputBorder.none, // Remove border
+                              ),
                             ),
                           ),
                         ),
@@ -150,7 +154,7 @@ class LoginPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Digite sua senha',
+                          'Digite seu e-mail',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
@@ -176,71 +180,87 @@ class LoginPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Senha',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Open Sans',
-                                    fontWeight: FontWeight.w300,
-                                    height: 0,
-                                  ),
+                            child: const TextField(
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.w300,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: 'Senha', // Placeholder text
+                                hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Open Sans',
+                                  fontWeight: FontWeight.w300,
                                 ),
-                              ],
+                                border: InputBorder.none, // Remove border
+                              ),
                             ),
                           ),
                         ),
                       ],
-                    ),
+                    )
                   ],
                 ),
               ),
               Positioned(
                 left: 132,
-                top: 382,
+                top: 410,
                 child: Opacity(
                   opacity: 0.40,
                   child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.only(
-                      top: 20,
-                      left: 12,
-                      right: 10,
-                      bottom: 20,
-                    ),
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFFB618EE),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                      width: 100,
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        left: 12,
+                        right: 10,
+                        bottom: 20,
                       ),
-                    ),
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 45,
-                          child: Text(
-                            'Login',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color(0xFFFFF2F2),
-                              fontSize: 16,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
-                            ),
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFFB618EE),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          // Handle button click here
+                          // For example, you can navigate to another screen or perform some action.
+                          print('Button Clicked');
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            // Add any decoration you need for the button
+                            color: const Color(
+                                0xFFB618EE), // Change the color as needed
+                            borderRadius: BorderRadius.circular(
+                                8.0), // Optional: Add border radius
+                          ),
+                          child: const Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 45,
+                                child: Text(
+                                  'Login',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFFFFF2F2),
+                                    fontSize: 16,
+                                    fontFamily: 'Open Sans',
+                                    fontWeight: FontWeight.w700,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                      )),
                 ),
               ),
             ],
