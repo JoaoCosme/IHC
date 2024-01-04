@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/novo_drop.dart';
 
 class MinhaLoja extends StatefulWidget {
   const MinhaLoja({super.key});
@@ -80,6 +81,11 @@ class _MinhaLojaState extends State<MinhaLoja> {
                                 InkWell(
                                   onTap: () {
                                     print("Adicionar drop");
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => NovoDrop()),
+                                    );
                                   },
                                   child: const Row(
                                     mainAxisSize: MainAxisSize.min,
