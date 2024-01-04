@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'minha_loja.dart';
+import 'admin/minha_loja.dart';
 
 void main() {
   runApp(const LoginScreen());
@@ -12,9 +12,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
-      ),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.white),
       home: Scaffold(
         body: ListView(children: const [
           LoginPage(),

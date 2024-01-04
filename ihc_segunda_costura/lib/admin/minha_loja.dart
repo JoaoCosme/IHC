@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ihc_segunda_costura/novo_drop.dart';
+import 'package:ihc_segunda_costura/admin/novo_drop.dart';
 
 class MinhaLoja extends StatefulWidget {
   const MinhaLoja({super.key});
