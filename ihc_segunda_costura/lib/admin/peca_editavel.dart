@@ -16,7 +16,7 @@ class PecaEditavel extends StatelessWidget {
           decoration: ShapeDecoration(
             color: const Color(0xC4E2A3F8),
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -42,7 +42,7 @@ class PecaEditavel extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 21),
-              SizedBox(
+              const SizedBox(
                 width: 200,
                 height: 70,
                 child: Row(
@@ -50,51 +50,41 @@ class PecaEditavel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Nome da Peça #1',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w700,
-                        height: 0,
-                      ),
-                    ),
-                    const SizedBox(width: 163),
-                    const Text(
-                      'Descrição da Peça',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w300,
-                        height: 0,
-                      ),
-                    ),
-                    const SizedBox(width: 163),
-                    const Text(
-                      'R\$ 50,00',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w300,
-                        height: 0,
-                      ),
-                    ),
-                    const SizedBox(width: 163),
-                    Container(
-                      width: 10,
-                      height: 10,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(),
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [],
-                      ),
-                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Nome da Peça #1',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                        Text(
+                          'Descrição da Peça',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w300,
+                            height: 0,
+                          ),
+                        ),
+                        Text(
+                          'R\$ 50,00',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w300,
+                            height: 0,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
