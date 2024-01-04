@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ihc_segunda_costura/minha_loja.dart';
+import 'minha_loja.dart';
 
 void main() {
   runApp(const LoginScreen());
