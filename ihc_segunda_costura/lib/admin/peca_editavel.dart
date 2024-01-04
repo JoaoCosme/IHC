@@ -43,7 +43,7 @@ class PecaEditavel extends StatelessWidget {
               ),
               const SizedBox(width: 21),
               SizedBox(
-                width: 250,
+                width: 200,
                 height: 70,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
