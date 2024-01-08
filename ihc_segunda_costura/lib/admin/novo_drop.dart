@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
 class NovoDrop extends StatefulWidget {
@@ -66,8 +67,9 @@ class _NovoDropState extends State<NovoDrop> {
                   top: 610,
                   child: Container(
                     child: InkWell(
-                      onTap: () {
+                      onTap: () async {
                         print("Add peça");
+                        await _pickImage();
                         // Add a new PecaEditavel widget to the list
                         setState(() {
                           pecasList.add(PecaEditavel());
@@ -156,5 +158,18 @@ class _NovoDropState extends State<NovoDrop> {
         ],
       ),
     );
+  }
+}
+
+Future<void> _pickImage() async {
+  final picker = ImagePicker();
+  final pickedFile = await picker.getImage(source: ImageSource.gallery);
+
+  if (pickedFile != null) {
+    // Handle the selected image
+    print('Image picked: ${pickedFile.path}');
+  } else {
+    // User canceled the image selection
+    print('Image selection canceled');
   }
 }
