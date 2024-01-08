@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/admin/minha_loja.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
@@ -126,6 +127,44 @@ class _NovoDropState extends State<NovoDrop> {
                             ],
                           )
                         : Container(), // Hide the warning if showWarning is false
+                  ),
+                ),
+                Positioned(
+                  left: 10,
+                  top: 615,
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: showWarning
+                        ? Container()
+                        : GestureDetector(
+                            onTap: () {
+                              // Navigate to MinhaLoja screen when clicked
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MinhaLoja()),
+                              );
+                            },
+                            child: Container(
+                              width: 160,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFE2A3F8), // Rose color
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  'Confirmar',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontFamily: 'Open Sans',
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                   ),
                 ),
                 // ListView.builder for dynamic list of PecaEditavel widgets
