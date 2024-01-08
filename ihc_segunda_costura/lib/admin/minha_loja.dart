@@ -219,6 +219,13 @@ class _MinhaLojaState extends State<MinhaLoja> {
                         color: Color(0xFFE2A3F8),
                         shape: OvalBorder(),
                       ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.person,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ),
                   Positioned(
