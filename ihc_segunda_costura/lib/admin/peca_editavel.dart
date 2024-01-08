@@ -20,7 +20,7 @@ class PecaEditavel extends StatelessWidget {
                 width: 335,
                 height: 125,
                 decoration: ShapeDecoration(
-                  color: const Color(0xC4E2A3F8),
+                  color: const Color(0xFFE2A3F8),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(0),
                   ),
@@ -102,7 +102,10 @@ class PecaEditavel extends StatelessWidget {
                 top: 5,
                 right: 5,
                 child: IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  ),
                   onPressed: onDelete,
                 ),
               ),

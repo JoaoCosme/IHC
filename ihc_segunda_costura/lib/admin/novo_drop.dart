@@ -72,7 +72,7 @@ class _NovoDropState extends State<NovoDrop> {
                         await _pickImage();
                         // Add a new PecaEditavel widget to the list
                         setState(() {
-                          pecasList.add(PecaEditavel());
+                          pecasList.add(const PecaEditavel());
                           // Hide the warning after the first click
                           showWarning = false;
                         });
@@ -89,20 +89,12 @@ class _NovoDropState extends State<NovoDrop> {
                               color: Color(0xFFE2A3F8),
                               shape: OvalBorder(),
                             ),
-                          ),
-                          const SizedBox(width: 10),
-                          Container(
-                            width: 30,
-                            height: 30,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0),
-                            ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [],
+                            child: const Center(
+                              child: Icon(
+                                Icons.add,
+                                size: 50,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
