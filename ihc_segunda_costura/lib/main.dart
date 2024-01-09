@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontFamily: 'Open Sans',
-                                  fontWeight: FontWeight.w300,
+                                  fontWeight: FontWeight.w500,
                                 ),
                                 border: InputBorder.none, // Remove border
                               ),
@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontFamily: 'Open Sans',
-                                  fontWeight: FontWeight.w300,
+                                  fontWeight: FontWeight.w500,
                                 ),
                                 border: InputBorder.none, // Remove border
                               ),

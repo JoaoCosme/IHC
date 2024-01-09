@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 
 class PecaEditavel extends StatelessWidget {
   final VoidCallback? onDelete;
+  final Widget navigateWidget;
 
-  const PecaEditavel({Key? key, this.onDelete}) : super(key: key);
+  const PecaEditavel({
+    Key? key,
+    required this.navigateWidget,
+    this.onDelete,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
+        child: InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => navigateWidget),
+        );
+      },
       child: Column(
         children: [
           Container(
@@ -113,6 +126,6 @@ class PecaEditavel extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 }

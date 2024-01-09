@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
@@ -73,7 +74,9 @@ class _NovoDropState extends State<NovoDrop> {
                         await _pickImage();
                         // Add a new PecaEditavel widget to the list
                         setState(() {
-                          pecasList.add(const PecaEditavel());
+                          pecasList.add(const PecaEditavel(
+                            navigateWidget: EditarPeca(),
+                          ));
                           // Hide the warning after the first click
                           showWarning = false;
                         });
