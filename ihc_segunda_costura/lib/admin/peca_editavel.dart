@@ -50,7 +50,7 @@ class PecaEditavel extends StatelessWidget {
                         image: DecorationImage(
                           image: NetworkImage(
                               "https://imgs.search.brave.com/1WJ4SrN0fF6zWGPTa-9EOnOBtqZlRi4N_d1jjxvVFNw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjQx/MDYyNTM4L3Bob3Rv/L2xlYXRoZXItamFj/a2V0LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz14Vi1XMUw4/Snp6WURRWWJ5SXdw/WVN3b2Z2N2w3cUVY/UXduejJuYWdCem1z/PQ"),
-                          fit: BoxFit.fill,
+                          fit: BoxFit.contain,
                         ),
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
@@ -74,7 +74,7 @@ class PecaEditavel extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Nome da Peça #1',
+                                'Nome da Peça',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
