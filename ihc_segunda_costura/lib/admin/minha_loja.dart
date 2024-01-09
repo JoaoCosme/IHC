@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/admin/minhas_pecas.dart';
 import 'package:ihc_segunda_costura/admin/novo_drop.dart';
 
 class MinhaLoja extends StatefulWidget {
@@ -133,7 +134,13 @@ class _MinhaLojaState extends State<MinhaLoja> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 InkWell(
-                                  onTap: () => {print("Minhas Peças")},
+                                  onTap: () => {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MinhasPecas()),
+                                    )
+                                  },
                                   child: const Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.start,
