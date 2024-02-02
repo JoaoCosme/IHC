@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/minhas_pecas.dart';
 import 'package:ihc_segunda_costura/admin/novo_drop.dart';
+import 'package:ihc_segunda_costura/main.dart';
 import 'minhas_vendas.dart';
-
 
 class MinhaLoja extends StatefulWidget {
   const MinhaLoja({super.key});
@@ -233,7 +233,9 @@ class _MinhaLojaState extends State<MinhaLoja> {
                         shape: OvalBorder(),
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: const Icon(
                           Icons.person,
                           color: Colors.white,

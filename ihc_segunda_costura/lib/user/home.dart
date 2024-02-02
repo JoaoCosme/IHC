@@ -183,7 +183,9 @@ class _HomeUserState extends State<HomeUser> {
                         shape: OvalBorder(),
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: const Icon(
                           Icons.person,
                           color: Colors.white,
