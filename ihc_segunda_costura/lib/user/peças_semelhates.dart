@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
+import 'package:ihc_segunda_costura/admin/peca_vendida.dart';
+import 'package:ihc_segunda_costura/user/peca_disponivel.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
@@ -13,14 +15,11 @@ class PecasSemelhantes extends StatefulWidget {
 
 class _NovoDropState extends State<PecasSemelhantes> {
   List<Widget> pecasList = [
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
+    PecaEditavel(
+      navigateWidget: PecaDisponivel(),
     ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
-    ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
+    PecaEditavel(
+      navigateWidget: PecaDisponivel(),
     ),
   ];
   bool showWarning = true;
