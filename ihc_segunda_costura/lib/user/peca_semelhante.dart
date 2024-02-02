@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 
-class PecaEditavel extends StatelessWidget {
+class PecaSemelhante extends StatelessWidget {
   final VoidCallback? onDelete;
   final Widget navigateWidget;
 
-  const PecaEditavel({
+  const PecaSemelhante({
     Key? key,
     required this.navigateWidget,
     this.onDelete,
@@ -74,7 +74,7 @@ class PecaEditavel extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Nome da Peça',
+                                'Jaqueta',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
@@ -84,7 +84,7 @@ class PecaEditavel extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Descrição da Peça',
+                                'Jaqueta de Couro; Vintage; Preta',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12,
@@ -109,17 +109,6 @@ class PecaEditavel extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-              ),
-              Positioned(
-                top: 5,
-                right: 5,
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.close,
-                    color: Colors.white,
-                  ),
-                  onPressed: onDelete,
                 ),
               ),
             ],

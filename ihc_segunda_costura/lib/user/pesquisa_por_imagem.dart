@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
+import 'package:ihc_segunda_costura/user/pe%C3%A7as_semelhates.dart';
+import 'package:ihc_segunda_costura/user/peca_encontrada.dart';
+import 'package:ihc_segunda_costura/user/peca_semelhante.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
-class MinhasPecas extends StatefulWidget {
-  const MinhasPecas({Key? key}) : super(key: key);
+class PesquisaPorImagem extends StatefulWidget {
+  const PesquisaPorImagem({Key? key}) : super(key: key);
 
   @override
-  _NovoDropState createState() => _NovoDropState();
+  _PesquisaPorImagemState createState() => _PesquisaPorImagemState();
 }
 
-class _NovoDropState extends State<MinhasPecas> {
-  List<Widget> pecasList = [
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
-    ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
-    ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
-    ),
-  ];
+class _PesquisaPorImagemState extends State<PesquisaPorImagem> {
+  List<Widget> pecasList = [];
   bool showWarning = true;
 
   @override
@@ -55,14 +48,14 @@ class _NovoDropState extends State<MinhasPecas> {
                 ),
                 const Positioned(
                   left: 15,
-                  top: 81,
+                  top: 90,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Minhas peças',
+                        'Pesquisa por Imagem',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 24,
@@ -74,9 +67,47 @@ class _NovoDropState extends State<MinhasPecas> {
                     ],
                   ),
                 ),
-
                 Positioned(
-                  left: 107,
+                  left: 270,
+                  top: 610,
+                  child: Container(
+                    child: InkWell(
+                      onTap: () async {
+                        await _pickImage();
+                        setState(() {
+                          pecasList.add(const PecaSemelhante(
+                            navigateWidget: PecasSemelhantes(),
+                          ));
+                          showWarning = false;
+                        });
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFFE2A3F8),
+                              shape: OvalBorder(),
+                            ),
+                            child: const Center(
+                              child: Icon(
+                                Icons.add,
+                                size: 50,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 80,
                   top: 261,
                   child: Container(
                     padding: const EdgeInsets.all(10),
@@ -87,7 +118,7 @@ class _NovoDropState extends State<MinhasPecas> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                'Sem peças ainda!',
+                                'Selecione uma imagem!',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
@@ -101,44 +132,7 @@ class _NovoDropState extends State<MinhasPecas> {
                         : Container(), // Hide the warning if showWarning is false
                   ),
                 ),
-                Positioned(
-                  left: 10,
-                  top: 615,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    child: showWarning
-                        ? Container()
-                        : GestureDetector(
-                            onTap: () {
-                              // Navigate to MinhaLoja screen when clicked
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MinhaLoja()),
-                              );
-                            },
-                            child: Container(
-                              width: 160,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFE2A3F8), // Rose color
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  'Confirmar',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontFamily: 'Open Sans',
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                  ),
-                ),
+
                 // ListView.builder for dynamic list of PecaEditavel widgets
                 Positioned(
                   left: 12.5,
@@ -161,5 +155,18 @@ class _NovoDropState extends State<MinhasPecas> {
         ],
       ),
     );
+  }
+}
+
+Future<void> _pickImage() async {
+  final picker = ImagePicker();
+  final pickedFile = await picker.getImage(source: ImageSource.gallery);
+
+  if (pickedFile != null) {
+    // Handle the selected image
+    print('Image picked: ${pickedFile.path}');
+  } else {
+    // User canceled the image selection
+    print('Image selection canceled');
   }
 }

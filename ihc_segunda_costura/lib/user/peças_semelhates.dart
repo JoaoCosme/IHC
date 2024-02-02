@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
+import 'package:ihc_segunda_costura/admin/peca_vendida.dart';
+import 'package:ihc_segunda_costura/user/peca_disponivel.dart';
+import 'package:ihc_segunda_costura/user/peca_encontrada.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
-class MinhasPecas extends StatefulWidget {
-  const MinhasPecas({Key? key}) : super(key: key);
+class PecasSemelhantes extends StatefulWidget {
+  const PecasSemelhantes({Key? key}) : super(key: key);
 
   @override
   _NovoDropState createState() => _NovoDropState();
 }
 
-class _NovoDropState extends State<MinhasPecas> {
+class _NovoDropState extends State<PecasSemelhantes> {
   List<Widget> pecasList = [
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
+    PecaEncontrada(
+      navigateWidget: PecaDisponivel(),
     ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
-    ),
-    const PecaEditavel(
-      navigateWidget: EditarPeca(),
+    PecaEncontrada(
+      navigateWidget: PecaDisponivel(),
     ),
   ];
   bool showWarning = true;
@@ -62,7 +62,7 @@ class _NovoDropState extends State<MinhasPecas> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Minhas peças',
+                        'Peças Encontradas',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 24,

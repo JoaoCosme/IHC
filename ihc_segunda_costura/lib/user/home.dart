@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/minhas_pecas.dart';
+import 'package:ihc_segunda_costura/admin/minhas_vendas.dart';
 import 'package:ihc_segunda_costura/admin/novo_drop.dart';
-import 'minhas_vendas.dart';
+import 'package:ihc_segunda_costura/user/brechos_perto_de_mim.dart';
+import 'package:ihc_segunda_costura/user/pesquisa_por_imagem.dart';
 
-
-class MinhaLoja extends StatefulWidget {
-  const MinhaLoja({super.key});
+class HomeUser extends StatefulWidget {
+  const HomeUser({super.key});
 
   @override
-  _MinhaLojaState createState() => _MinhaLojaState();
+  _HomeUserState createState() => _HomeUserState();
 }
 
-class _MinhaLojaState extends State<MinhaLoja> {
+class _HomeUserState extends State<HomeUser> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -50,7 +51,7 @@ class _MinhaLojaState extends State<MinhaLoja> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Minha Loja',
+                          'Home',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 24,
@@ -87,7 +88,8 @@ class _MinhaLojaState extends State<MinhaLoja> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => NovoDrop()),
+                                          builder: (context) =>
+                                              PesquisaPorImagem()),
                                     );
                                   },
                                   child: const Row(
@@ -97,7 +99,7 @@ class _MinhaLojaState extends State<MinhaLoja> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Adicionar Drop',
+                                        'Pesquisar Por Imagem',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 16,
@@ -140,7 +142,8 @@ class _MinhaLojaState extends State<MinhaLoja> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => MinhasPecas()),
+                                          builder: (context) =>
+                                              BrechosPertoDeMim()),
                                     )
                                   },
                                   child: const Row(
@@ -150,60 +153,7 @@ class _MinhaLojaState extends State<MinhaLoja> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Minhas Peças',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontFamily: 'Open Sans',
-                                          fontWeight: FontWeight.w300,
-                                          height: 0,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 23),
-                        Opacity(
-                          opacity: 0.40,
-                          child: Container(
-                            width: 330,
-                            padding: const EdgeInsets.only(
-                              top: 20,
-                              left: 12,
-                              right: 10,
-                              bottom: 20,
-                            ),
-                            decoration: ShapeDecoration(
-                              color: const Color(0xFFB618EE),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  onTap: () => {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MinhasVendas()),
-                                    )
-                                  },
-                                  child: const Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Minhas Vendas',
+                                        'Brechos Perto de Mim',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 16,

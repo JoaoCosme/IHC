@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihc_segunda_costura/user/home.dart';
 import 'admin/minha_loja.dart';
 
 void main() {
@@ -242,6 +243,12 @@ class _LoginPageState extends State<LoginPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MinhaLoja()),
+                            );
+                          } else if (emailController.text == 'user') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeUser()),
                             );
                           }
                         },
