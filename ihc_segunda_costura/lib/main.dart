@@ -161,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Digite seu e-mail',
+                          'Digite sua senha',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
@@ -189,6 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: TextField(
                               controller: passwordController,
+                              obscureText: true,
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 16,
@@ -236,6 +237,22 @@ class _LoginPageState extends State<LoginPage> {
                         onTap: () {
                           // Handle button click here
                           // For example, you can navigate to another screen or perform some action.
+                          if (passwordController.text.isEmpty) {
+                            final snackBar = SnackBar(
+                              content: const Text('Insira a sua senha!'),
+                              action: SnackBarAction(
+                                label: 'Ok',
+                                onPressed: () {
+                                  // Some code to undo the change.
+                                },
+                              ),
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
+
+                          // Find the ScaffoldMessenger in the widget tree
+                          // and use it to show a SnackBar.
                           print('Email: ${emailController.text}');
                           print('Password: ${passwordController.text}');
                           if (emailController.text == "admin") {
