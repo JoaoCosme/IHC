@@ -62,7 +62,7 @@ class _NovoDropState extends State<MinhasPecas> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Novo Drop',
+                        'Minhas peças',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 24,
