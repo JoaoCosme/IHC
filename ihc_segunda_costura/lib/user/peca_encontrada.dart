@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
+import 'package:ihc_segunda_costura/user/home.dart';
 
 class PecaEncontrada extends StatelessWidget {
   final VoidCallback? onDelete;
@@ -29,6 +30,57 @@ class PecaEncontrada extends StatelessWidget {
           ),
           Stack(
             children: [
+              Positioned(
+                left: 198,
+                top: 650,
+                child: Container(
+                  width: 147,
+                  height: 40,
+                  padding: const EdgeInsets.all(10),
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFFE2A3F8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      // Return to the previous screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeUser()),
+                      );
+                      final snackBar = SnackBar(
+                        content: const Text('Compra Ralizada!'),
+                        action: SnackBarAction(
+                          label: 'Ok',
+                          onPressed: () {
+                            // Some code to undo the change.
+                          },
+                        ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    },
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Comprar!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
               Container(
                 width: 335,
                 height: 125,

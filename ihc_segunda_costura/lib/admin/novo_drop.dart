@@ -141,6 +141,17 @@ class _NovoDropState extends State<NovoDrop> {
                         ? Container()
                         : GestureDetector(
                             onTap: () {
+                              final snackBar = SnackBar(
+                                content: const Text('Drop Cadastrado!'),
+                                action: SnackBarAction(
+                                  label: 'Ok',
+                                  onPressed: () {
+                                    // Some code to undo the change.
+                                  },
+                                ),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
                               // Navigate to MinhaLoja screen when clicked
                               Navigator.push(
                                 context,

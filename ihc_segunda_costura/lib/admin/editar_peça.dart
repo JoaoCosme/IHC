@@ -77,6 +77,16 @@ class _EditarPecaState extends State<EditarPeca> {
                     ),
                     child: InkWell(
                       onTap: () {
+                        final snackBar = SnackBar(
+                          content: const Text('Edição Realizada!'),
+                          action: SnackBarAction(
+                            label: 'Ok',
+                            onPressed: () {
+                              // Some code to undo the change.
+                            },
+                          ),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         // Return to the previous screen
                         Navigator.pop(context);
                       },
