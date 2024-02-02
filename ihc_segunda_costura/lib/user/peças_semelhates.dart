@@ -3,6 +3,7 @@ import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
 import 'package:ihc_segunda_costura/admin/peca_vendida.dart';
 import 'package:ihc_segunda_costura/user/peca_disponivel.dart';
+import 'package:ihc_segunda_costura/user/peca_encontrada.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
@@ -15,10 +16,10 @@ class PecasSemelhantes extends StatefulWidget {
 
 class _NovoDropState extends State<PecasSemelhantes> {
   List<Widget> pecasList = [
-    PecaEditavel(
+    PecaEncontrada(
       navigateWidget: PecaDisponivel(),
     ),
-    PecaEditavel(
+    PecaEncontrada(
       navigateWidget: PecaDisponivel(),
     ),
   ];

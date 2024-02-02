@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/editar_pe%C3%A7a.dart';
 import 'package:ihc_segunda_costura/admin/minha_loja.dart';
 import 'package:ihc_segunda_costura/user/pe%C3%A7as_semelhates.dart';
+import 'package:ihc_segunda_costura/user/peca_encontrada.dart';
+import 'package:ihc_segunda_costura/user/peca_semelhante.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ihc_segunda_costura/admin/peca_editavel.dart';
 
@@ -46,7 +48,7 @@ class _PesquisaPorImagemState extends State<PesquisaPorImagem> {
                 ),
                 const Positioned(
                   left: 15,
-                  top: 81,
+                  top: 90,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -73,7 +75,7 @@ class _PesquisaPorImagemState extends State<PesquisaPorImagem> {
                       onTap: () async {
                         await _pickImage();
                         setState(() {
-                          pecasList.add(const PecaEditavel(
+                          pecasList.add(const PecaSemelhante(
                             navigateWidget: PecasSemelhantes(),
                           ));
                           showWarning = false;
@@ -105,7 +107,7 @@ class _PesquisaPorImagemState extends State<PesquisaPorImagem> {
                   ),
                 ),
                 Positioned(
-                  left: 107,
+                  left: 80,
                   top: 261,
                   child: Container(
                     padding: const EdgeInsets.all(10),
