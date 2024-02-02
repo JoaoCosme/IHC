@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ihc_segunda_costura/admin/minhas_pecas.dart';
 import 'package:ihc_segunda_costura/admin/minhas_vendas.dart';
 import 'package:ihc_segunda_costura/admin/novo_drop.dart';
+import 'package:ihc_segunda_costura/user/brechos_perto_de_mim.dart';
 import 'package:ihc_segunda_costura/user/pesquisa_por_imagem.dart';
 
 class HomeUser extends StatefulWidget {
@@ -141,7 +142,8 @@ class _HomeUserState extends State<HomeUser> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => MinhasPecas()),
+                                          builder: (context) =>
+                                              BrechosPertoDeMim()),
                                     )
                                   },
                                   child: const Row(
