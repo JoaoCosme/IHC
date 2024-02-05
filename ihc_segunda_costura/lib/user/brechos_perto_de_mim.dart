@@ -8,13 +8,13 @@ import 'package:ihc_segunda_costura/user/pecas_brecho.dart';
 
 const List<String> categoriaList = <String>['Couro', 'Vintage'];
 const List<String> distanciaList = <String>['1km', '5km', '10km'];
-List<File> fileList = <File>[
-  File("assets/1km-dist.png"),
-  File("assets/5km-dist.png"),
-  File("assets/10km-dist.png"),
-  File("assets/1km-dist-vintage.png"),
-  File("assets/5km-dist-vintage.png"),
-  File("assets/10km-dist-vintage.png"),
+List<AssetImage> imageList = <AssetImage>[
+  AssetImage("assets/1km-dist.png"),
+  AssetImage("assets/5km-dist.png"),
+  AssetImage("assets/10km-dist.png"),
+  AssetImage("assets/1km-dist-vintage.png"),
+  AssetImage("assets/5km-dist-vintage.png"),
+  AssetImage("assets/10km-dist-vintage.png"),
 ];
 
 String categoriaValue = categoriaList.first;
@@ -147,7 +147,7 @@ class _BrechosPertoDeMimState extends State<BrechosPertoDeMim> {
                         height: 500,
                         decoration: ShapeDecoration(
                           image: DecorationImage(
-                            image: FileImage(fileList[imageIndex]),
+                            image: imageList[imageIndex],
                             fit: BoxFit.fitHeight,
                           ),
                           shape: const RoundedRectangleBorder(
